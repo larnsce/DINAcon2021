@@ -1,0 +1,89 @@
+---
+title: "DINAcon 2021 Session Proposal"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Idee
+
+Eine 1-stündige Session bei der DINAcon 2021 einreichen, welche die Bemühungen und Erfahrungen des STAT aufzeigt um Daten- und Statistikkompetenz im Kanton Zürich auszuweiten. 
+
+Zusammenfassend gehört dazu die Datenwerkstatt als übergeordnetes Angebot. Dies kann im Zusammenhang mir dem Impulsprogramm Digitale Verwaltung und der Digital Skills Offensive als Angebot präsentiert werden. 
+
+Dem untergeordnet ist dann der R Kurs, welcher spezifische Fähigkeiten in der Verwaltung ausbaut. Fokus des Votrags könnte die virtuelle Durchführung des Kurses und die Nutzung von cloud-basierter Infrastruktur (RStudio Cloud) und GitHub Organizations als Learning Management System sein.
+
+Damit die erworbenen Fähigkieten jedoch in der Verwaltung auch genutzt werden können, braucht es eine organisierte und gut verwaltete IT Infrastruktur. Hier kommt die Tatsache ins Spiel, dass R und RStudio open source Produkte sind und es IT Administratoren braucht um diese effizient zu verwalten. Die Arbeit am RStudio Server wird als Lösung präsentiert und Erfahrung und Pläne zur Ausweitung geteilt.
+
+Das letzte ist dann Community Building. Eines der wertvollsten Eigenschaften der R Community im Allgemeinen. Es kann davon berichtet werden wie interne und kantonsweite R Austausche stattfinden, was zu Meetups beigetragen und R-spezifischen Konferenzen beigetragen wird. 
+
+# Speaker
+
+1. Laure Stadler (Big picture, Datenwerkstatt, Daten- und Statistikkompetenz)
+2. Lars Schöbitz (rstatsZH)
+3. Thomas Knecht (RStudio Server)
+4. Andrea Schnell (R Community Building)
+
+# Titel
+
+**Notiz Lars: Hier unbedingt andere Vorschläge machen**
+
+Die moderne Verwaltung: Daten- und Statistikkompetenz im Kanton Zürich ausweiten
+
+# Thema
+
+- TBD
+
+# Track
+
+- TBD
+
+# Zusammenfassung (500 bis 600 Zeichen, zwingend)
+
+**Notiz Lars:** Ich habe hier vier übergreifende Themen gelistet, welche gemeinsam spannend und einladend für die Zusammenfassung beschrieben werden sollten. Zu diesem Zeitpunkt geht es nur erstmal darum zu schauen ob die Grundidee auf Interesse stösst.
+
+## Zusammenfassende Einführung
+
+- Was macht eine moderne Verwaltung aus?
+- Relevanz Daten- und Statistikkompetenz im Allgemeinen
+- Was macht das STAT um dies zu erreichen?
+
+### Themen
+
+**Laure**
+
+- Aufbau einer Datenwerkstatt für Weiterbildung (Daten- und Statistikkompetenz für Lehrpersonen, etc.)
+  - Hintergrund
+  - Ziele
+
+**Lars**
+
+- Aufbau eines Kurses für Data Science mit R (rstatsZH)
+  - Hintergrund
+  - Ziele
+
+**Thomas**
+
+- Aufbau einer Instrastruktur für effizientes Arbeiten mit open source Werkzeugen (RStudio Server) 
+  - Hintergrund
+  - Ziele
+
+**Andrea**
+
+- Aufbau einer Community für Kollaboration und Austausch über R (#r_stat Slack Community, interner/kantonsweiter Austausch, meetups)
+  - Hintergrund
+  - Ziele
+
+# Beschreibung (nicht zwingend zum Angeben)
+
+**Notiz Lars:** Hier kann die Session ausführlicher beschrieben werden. Zum Beispiel mit Hintergrundinformationen und Motivation.
+
+# Ablauf der Session (nicht zwingend zum Angeben)
+
+- Teil 1: Vier Vorträge
+- Teil 2: Diskussion im Plenum
+

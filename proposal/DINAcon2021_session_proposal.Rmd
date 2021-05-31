@@ -9,34 +9,34 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Idee
+# Idee (nur zur Info, wird nicht für Proposal gebraucht)
 
-Eine 1-stündige Session bei der DINAcon 2021 einreichen, welche die Bemühungen und Erfahrungen des STAT aufzeigt um Daten- und Statistikkompetenz im Kanton Zürich auszuweiten. 
+Eine 1-stündige Session bei der DINAcon 2021 einreichen, welche die Bemühungen und Erfahrungen des STAT aufzeigt um Daten- und Statistikkompetenz im Kanton Zürich auszuweiten.
 
-Zusammenfassend gehört dazu die Datenwerkstatt als übergeordnetes Angebot. Dies kann im Zusammenhang mir dem Impulsprogramm Digitale Verwaltung und der Digital Skills Offensive als Angebot präsentiert werden. 
+Zusammenfassend gehört dazu die Entwicklung der Nutzung von open source tools im STAT, sowie die Ziele die verfolgt werden um diese Kompetenzen auszuweiten. Dazu gehört auch das Community Building. Eines der wertvollsten Eigenschaften der R Community im Allgemeinen. Es kann davon berichtet werden wie interne und kantonsweite R Austausche stattfinden, was zu Meetups beigetragen und R-spezifischen Konferenzen beigetragen wird.
 
-Dem untergeordnet ist dann der R Kurs, welcher spezifische Fähigkeiten in der Verwaltung ausbaut. Fokus des Votrags könnte die virtuelle Durchführung des Kurses und die Nutzung von cloud-basierter Infrastruktur (RStudio Cloud) und GitHub Organizations als Learning Management System sein.
+Die Datenwerkstatt und Daten- und Statistikkompetenz im Zusammenhang mit dem CO2 Projekt als übergeordnetes Thema . Dies kann im Zusammenhang mit dem Impulsprogramm Digitale Verwaltung und der Digital Skills Offensive als Angebot präsentiert werden.
 
-Damit die erworbenen Fähigkieten jedoch in der Verwaltung auch genutzt werden können, braucht es eine organisierte und gut verwaltete IT Infrastruktur. Hier kommt die Tatsache ins Spiel, dass R und RStudio open source Produkte sind und es IT Administratoren braucht um diese effizient zu verwalten. Die Arbeit am RStudio Server wird als Lösung präsentiert und Erfahrung und Pläne zur Ausweitung geteilt.
+Dem untergeordnet ist dann der R Kurs, welcher spezifische Fähigkeiten in der Verwaltung ausbaut. Fokus des Vortrags könnte die virtuelle Durchführung des Kurses und die Nutzung von cloud-basierter Infrastruktur (RStudio Cloud) und GitHub Organizations als Learning Management System sein.
 
-Das letzte ist dann Community Building. Eines der wertvollsten Eigenschaften der R Community im Allgemeinen. Es kann davon berichtet werden wie interne und kantonsweite R Austausche stattfinden, was zu Meetups beigetragen und R-spezifischen Konferenzen beigetragen wird. 
+Damit die erworbenen Fähigkeiten jedoch in der Verwaltung auch genutzt werden können, braucht es eine organisierte und gut verwaltete IT Infrastruktur. Hier kommt die Tatsache ins Spiel, dass R und RStudio open source Produkte sind und es IT Administratoren braucht um diese effizient zu verwalten. Die Arbeit am RStudio Server wird als Lösung präsentiert und Erfahrung und Pläne zur Ausweitung geteilt.
 
 # Speaker
 
-1. Laure Stadler (Big picture, Datenwerkstatt, Daten- und Statistikkompetenz)
-2. Lars Schöbitz (rstatsZH)
-3. Thomas Knecht (RStudio Server)
-4. Andrea Schnell (R Community Building)
+1. Andrea Schnell (Big picture, Entwicklung R im STAT, R Community Building)
+2. Christian Ruiz / Michelle Donzallaz / Laure Stadler (Daten- und Statistikkompetenz, Zusammenhang CO2 Projekt)
+3. Lars Schöbitz (rstatsZH)
+4. Thomas Knecht (RStudio Server)
+
 
 # Titel
 
-**Notiz Lars: Hier unbedingt andere Vorschläge machen**
-
-Die moderne Verwaltung: Daten- und Statistikkompetenz im Kanton Zürich ausweiten
+Die moderne Verwaltung: Daten- und Statistikkompetenz für den Kanton Zürich
 
 # Thema
 
-- TBD
+- Open Education
+- Kollaboration / Partizipation
 
 # Track
 
@@ -44,46 +44,24 @@ Die moderne Verwaltung: Daten- und Statistikkompetenz im Kanton Zürich ausweite
 
 # Zusammenfassung (500 bis 600 Zeichen, zwingend)
 
-**Notiz Lars:** Ich habe hier vier übergreifende Themen gelistet, welche gemeinsam spannend und einladend für die Zusammenfassung beschrieben werden sollten. Zu diesem Zeitpunkt geht es nur erstmal darum zu schauen ob die Grundidee auf Interesse stösst.
+Die moderne Verwaltung arbeitet offen, transparent und kollaborativ. Gemeinschaft wird gefördert und die Arbeit mit Open Source Software aktiv unterstützt. Fähigkeiten für einen kompententen Umgang mit Daten werden sowohl in der Verwaltung als auch in der Öffentlichkeit gezielt mit Bildungsprojekten gefördert. Damit das klappen kann braucht es offene Kommunikation, neuartige Angebote und performante IT Infrastruktur.
 
-## Zusammenfassende Einführung
+Anhand von vier Kurzvorträgen teilen wir mit dem Publikum unsere Erfahrungen und Herausforderungen, und geben dann anschließend Möglichkeit Fragen zu stellen und Vorschläge für eine Weiterentwicklung zu teilen.
 
-- Was macht eine moderne Verwaltung aus?
-- Relevanz Daten- und Statistikkompetenz im Allgemeinen
-- Was macht das STAT um dies zu erreichen?
-
-### Themen
-
-**Laure**
-
-- Aufbau einer Datenwerkstatt für Weiterbildung (Daten- und Statistikkompetenz für Lehrpersonen, etc.)
-  - Hintergrund
-  - Ziele
-
-**Lars**
-
-- Aufbau eines Kurses für Data Science mit R (rstatsZH)
-  - Hintergrund
-  - Ziele
-
-**Thomas**
-
-- Aufbau einer Instrastruktur für effizientes Arbeiten mit open source Werkzeugen (RStudio Server) 
-  - Hintergrund
-  - Ziele
-
-**Andrea**
-
-- Aufbau einer Community für Kollaboration und Austausch über R (#r_stat Slack Community, interner/kantonsweiter Austausch, meetups)
-  - Hintergrund
-  - Ziele
 
 # Beschreibung (nicht zwingend zum Angeben)
 
-**Notiz Lars:** Hier kann die Session ausführlicher beschrieben werden. Zum Beispiel mit Hintergrundinformationen und Motivation.
+Seit dem Jahr 20XX wird im Statistischen Amt des Kantons Zürich bereits mit der Open Source Software "R" gearbeitet. Diese Entscheidung wurde bewusst getroffen um den Anforderungen an eine moderne Verwaltung gerecht zu werden. Um eine nachhaltige Arbeit und Gemeinschaft zu fördern wird regelmässig sowohl intern als auch externe R-Austäsche organsisiert. Dazu gehören offene Slack Channels, Konferenz Calls und MeetUps. Eine einladene und offene Kultur führt dazu, dass sich über die Grenzen der eigenen Verwaltungseinheit hinweg ausgetauscht wird und Silos so auf informelle Weise abgebaut werden.
+
+Im Jahr 2020 wurde neu die Datenwerkstatt für Weiterbildung im Bereich Daten- und Statistikkompetenz etabliert. Dazu gehört ein Angebot für Lehrpersonen, welche diese dabei unterstützt ihren Schüler_innen Datenkompetenz zu vermitteln. In Partnerschaft mit dem Verein Make.Human.Technology, der Bildungsplanung des Kantons Zürich und der Schweizerischen Gesellschaft für Statistik wird der Bau und die Nutzung von CO2-Sensoren als pädagogisches, technisches und gesundheitspräventives Vorhaben umgesetzt.
+
+Ein Kurs in Data Science mit R wurde für Einsteiger_innen in der Verwaltung und externe Interessierte konzipiert. Der Kurs bringt den Teilnehmer_innen bei, Daten zu organisieren, reproduzierbar zu bearbeiten und das Ergebnis anderen zur Verfügung zu stellen. Um das Gelernte im eigenen Arbeitsalltag nutzen zu können wird gezielt dabei unterstüzt die nötige Infrastruktur aufzubauen.
+
+Das effiziente und nachhaltige Arbeiten mit Open Source Software kann nur über eine kontrollierte und gewartete Infrastruktur gewährleistet werden. Speziell dafür wird im Statistischen Amt ein RStudio Server verwaltet, welche eine zentrale Administration der Rollen und Versionen erlaubt. Langfristig ist das Ziel dieses Angebot grossflächig auszuweiten.
+
 
 # Ablauf der Session (nicht zwingend zum Angeben)
 
-- Teil 1: Vier Vorträge
-- Teil 2: Diskussion im Plenum
+Teil 1: Vier Kurzvorträge (á 10 min); (1) Open Source und Community im STAT (2) Daten- und Statistikkompetent (CO2 Projekt) (3) rstatsZH - Data Science mit R; (4) Infrastruktur für Open Source Softwarfe
 
+Teil 2: Diskussionrunde

@@ -1,7 +1,7 @@
 ---
-title: "rstatsZH - Data Science mit R"
-subtitle: "Untertitel hinzufügen"
-author: "Lars Schöbitz"
+title: "Die datengetriebene Verwaltung: Daten- und Statistikkompetenz für den Kanton Zürich"
+subtitle: "rstatsZH - Data Science mit R"
+author: "DINAcon 2021 - Lars Schöbitz - lse.de"
 date: "2021-10-29"
 output:
   xaringan::moon_reader:
@@ -70,7 +70,7 @@ style_mono_accent(
   footnote_font_size = "0.8rem",
   footnote_position_bottom = "20px",
   header_background_padding = "2rem",
-  outfile = here::here("02-productivity-workshop/assets/css/xaringan-themer.css")
+  outfile = here::here("slides/assets/css/xaringan-themer.css")
 )
 
 # htmttools
@@ -109,14 +109,106 @@ class: middle, inverse
 # .large[Warum?]
 
 ---
+## Warum? (Bisher nur Outline)
+
+**STAT**
+
+- Kompetenzen im Umgang mit R und git/GitHub ausbauen um Kollaboration effizienter zu machen
+- Analytische Kompetenzen ausbauen um bessere datenbasierte Entscheidungen zu treffen 
+- Verständnis von strukturierten öffentlichen Daten (OGD) erhöhen um Anzahl der Publikationen voranzutreiben 
+
+**Kursteilnehmer_innen**
+
+- Weg von Excel, SPSS und STAT -> Hin zu modernen Open Source Alternativen
+- Datenvisualisierungen
+- Effizienteres Arbeiten und Zugang zum Programmieren bekommen
+    
+---
 class: middle, inverse
 
 # .large[Was?]
 
 ---
+class: left
+background-image: url(img/starwars-rey-rstats.png)
+background-position: middle
+background-size: contain
+
+
+.footnote[Artwork from [@juliesquid](https://twitter.com/juliesquid) for [@openscapes](https://twitter.com/openscapes) (illustrated by [@allison_horst](https://twitter.com/allison_horst)).]
+
+
+???
+
+- Ein neuartiger Kurs, welcher es sich zum Ziel setzt Analytiker in der Verwaltung mit modernen Werkzeugen für die Arbeit mit Daten auszustatten
+
+- Der Kurs wurde für Beginner konzipiert und Bedarf keinerlei Vorkenntnisse
+
+- Ein Fokus wird auf Kollaboratives Arbeiten und das Kommunizieren von Datenprojekten gelegt, wesshalb wir von Beginn an Git und GitHub nutzen und im R Markdown Format schreiben
+
+
+---
+# Was? - Lernziele
+
+Am Ende des Kurses können Teilnehmer_innen
+
+1. (Daten)projekte reproduzierbar publizieren
+2. Kollaborativ mit Git und GitHub arbeiten
+3. Das Konzept von Tidy Data verstehen und anwenden
+4. Explorative Datenanalysen durchführen
+5. Sich selbst und Anderen helfen mehr über die grosse Welt der Möglichkeiten für Data Science mit R zu lernen
+
+
+---
 class: middle, inverse
 
 # .large[Wie?]
+
+---
+## Wie? - Werkzeugkiste
+
+.pull-left[
+
+### **Kursarbeit**
+
+- Zoom
+- Slack
+- https://rstatszh.github.io/website/
+]
+
+.pull-right[
+
+### Data Science
+
+**Programmieren**
+
+- R
+- RStudio (Cloud)
+- R Tidyverse Packages
+- R Markdown
+
+**Versionskontrolle und Kollaboration**
+
+- Git
+- GitHub
+
+]
+
+---
+## Wie? - Kursüberblick (vielleicht weglassen)
+
+Sieben Kurseinheiten über sieben Wochen
+
+- **Unterricht:** Wöchentlich 3 Stunden
+- **Übungen:** Übungen während der Kurseinheit 
+- **Hausaufgaben:** Einzureichen bis zum nächsten Kurstag 
+- **Persönliches Tutoring:** Sprechstunden ausserhalb der Kurstage
+- **Abschluss Projekt (freiwillig):** 
+    - Eigene Arbeitsatmosphäre aufbauen
+    - Arbeit mit eigenen Daten 
+    - Bericht erfassen
+    - 5 Minuten Präsentation
+- **Zertifikat:** Bestätigung über Teilnahme
 
 
 ---
@@ -125,9 +217,87 @@ class: middle, inverse
 # .large[Wer?]
 
 ---
+
+```{r}
+
+knitr::include_graphics("img/shot1.png")
+
+```
+
+---
+
+```{r}
+
+knitr::include_graphics("img/shot2.png")
+
+```
+
+---
+
+```{r}
+
+knitr::include_graphics("img/shot3.png")
+
+```
+
+---
+# Text Analyse auf Frage:
+
+"Was möchtest du nach diesem Kurs wissen oder machen können, dass du momentan nicht weisst oder nicht machen kannst?"
+
+- Was sind die Top 5 Begriffe die gennant werden?
+- Welche zwei Worte werden am häufigsten zusammen gennannt?
+
+
+---
 class: middle, inverse
 
 # .large[Wieviel?]
+
+---
+## Wieviel wurde programmiert?
+
+Ich habe Nutzungsdaten aus der RStudio Cloud, aber momentan nur als Dashboard. Versuche an die Rohdaten zu kommen und folgende Indikatoren zu zeigen:
+
+- Anzahl Stunden pro Teilnehmer_in und (mean, sd) welche zusätzlich zu den 3 Kurstunden pro Woche aufgewendet wurden 
+- Zeitreihe der Summe Stunden pro Woche über alle Kurse
+
+Falls ich nicht an Daten komme, dann berechne ich ein paar Kennzahlen selbst. 
+
+---
+class: middle, inverse
+
+# .large[Evaluation / Zufriedenheit]
+
+
+---
+## Evaluation - wöchentlich
+
+- Zeige Ergebnis einer Frage zum Inhalt der Kurseinheit
+- **Plot wird mit R reproduziert**
+
+```{r}
+
+knitr::include_graphics("img/shot4.png")
+
+```
+
+---
+# `r emo::ji("sunflower")` Danke 
+
+Für die Aufmerksamkeit!
+
+Für die R packages [{xaringan}](https://github.com/yihui/xaringan) und [{xaringanthemer}](https://github.com/gadenbuie/xaringanthemer) 
+
+**Folien als PDF**:
+
+**Folien als HTML**:
+
+**Kurswebseite**: https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
+
+**Email**: Lars@Lse.de
+
+**Twitter**: @larnsce
 
 
 

@@ -1,0 +1,135 @@
+---
+title: "rstatsZH - Data Science mit R"
+subtitle: "Untertitel hinzufügen"
+author: "Lars Schöbitz"
+date: "2021-10-29"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/css/my-css-style.css", "assets/css/xaringan-themer.css"]
+    seal: false 
+    lib_dir: libs
+    nature:
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE,   
+  htmltools.preserve.raw = FALSE # to fix HTML issue
+  )
+# figure height, width, dpi
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      eval = TRUE,
+                      fig.width = 6, 
+                      fig.asp = 0.5,
+                      comment = "", 
+                      cache = FALSE, 
+                      out.width = "100%",
+                      fig.align = "center",
+                      dpi = 300,
+                      message = FALSE)
+
+# ggplot2 set theme
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+
+library(tidyverse)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter", "linkedin", "pocket")
+)
+
+# load packages -----------------------------------------------------------
+
+library(xaringanthemer)
+library(palmerpenguins)
+
+# set options -------------------------------------------------------------
+
+style_mono_accent(
+  base_color = "#0F4C81", # Pantone Classic Blue
+  header_font_google = google_font("Montserrat"),
+  code_font_google = google_font("Fira Mono"), 
+  code_highlight_color = "#D3D3D3", code_inline_background_color = "#D3D3D3", 
+  code_font_size = "1.2rem",
+  text_font_size = "1.4rem", 
+  header_h1_font_size = "2.0rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  footnote_font_size = "0.8rem",
+  footnote_position_bottom = "20px",
+  header_background_padding = "2rem",
+  outfile = here::here("02-productivity-workshop/assets/css/xaringan-themer.css")
+)
+
+# htmttools
+
+library(htmltools)
+
+```
+
+```{r broadcast, echo=FALSE}
+xaringanExtra::use_broadcast()
+```
+
+
+class: title-slide
+
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$subtitle`
+
+.bottom[
+
+```{r, echo=FALSE}
+p(rmarkdown::metadata$author)
+p(rmarkdown::metadata$date)
+```
+]
+
+
+---
+layout: true
+
+---
+class: middle, inverse
+
+# .large[Warum?]
+
+---
+class: middle, inverse
+
+# .large[Was?]
+
+---
+class: middle, inverse
+
+# .large[Wie?]
+
+
+---
+class: middle, inverse
+
+# .large[Wer?]
+
+---
+class: middle, inverse
+
+# .large[Wieviel?]
+
+
+
+
+

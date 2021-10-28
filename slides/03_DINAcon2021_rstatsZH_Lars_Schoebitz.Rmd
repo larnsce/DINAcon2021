@@ -146,8 +146,10 @@ background-size: contain
 
 # .big[Hoi! `r emo::ji("wave")`]
 
+.large[
 Ich bin Lars   
 [@larnsce](https://twitter.com/larnsce)
+]
 
 ---
 class: middle, inverse
@@ -247,10 +249,20 @@ class: middle, inverse
 
 ]
 
+---
+## Wie wird's gemacht? 
 
---
+.pull-left[
 
+- **Unterricht:** 
+    - 7 Wochen á 3 Stunden
+- **Lehrmethoden:** 
+    - Live Coding 
+    - Pair Programming 
+- **Hausaufgaben:** 
+    - Material zum Üben und Vertiefen
 
+]
 
 .pull-right[
 
@@ -263,6 +275,7 @@ class: middle, inverse
     - Gezielte Unterstützung bekommen
 - **Zertifikat:** 
     - Bestätigung über Teilnahme
+
 ]
 
 ---
@@ -297,6 +310,8 @@ dat_erfahrung %>%
     axis.ticks.x = element_blank(),
     axis.text.x = element_text(size = 28)
   )
+
+ggsave(here::here("slides/figures/plot-erfahrung-allgemein.png"), width = 16, height = 9)
 ```
 
 ```{r plot-erfahrung-allg-output, ref.label="plot-erfahrung-allg", fig.callout=TRUE, out.width="100%"}
@@ -333,6 +348,8 @@ dat_erfahrung %>%
     axis.ticks.x = element_blank()
   )
 
+
+ggsave(here::here("slides/figures/plot-erfahrung-r.png"), width = 16, height = 9)
 ```
 
 ```{r plot-erfahrung-r-output, ref.label="plot-erfahrung-r", fig.callout=TRUE}
@@ -390,6 +407,9 @@ dat_rscloud_usage %>%
     axis.ticks.x = element_blank()
   )
 
+
+ggsave(here::here("slides/figures/plot-rscloud-nutzung1.png"), width = 16, height = 9)
+
 ```
 
 ```{r plot-wieviel-rscloud-2, eval=FALSE}
@@ -435,6 +455,9 @@ dat_rscloud_usage %>%
     axis.ticks.x = element_blank()
   )
 
+ggsave(here::here("slides/figures/plot-rscloud-nutzung2.png"), width = 16, height = 9)
+
+
 ```
 
 ```{r plot-wieviel-rscloud-output-1, ref.label="plot-wieviel-rscloud-1", fig.callout=TRUE}
@@ -475,6 +498,8 @@ dat_gh_usage %>%
     panel.grid = element_blank(),
     axis.ticks.x = element_blank()
   )
+
+ggsave(here::here("slides/figures/plot-github-nutzung.png"), width = 16, height = 9)
 
 ```
 

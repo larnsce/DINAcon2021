@@ -1,7 +1,7 @@
 ---
 title: "Die datengetriebene Verwaltung: Daten- und Statistikkompetenz für den Kanton Zürich"
 subtitle: "rstatsZH - Data Science mit R"
-author: "DINAcon 2021 - Lars Schöbitz - lse.de"
+author: "DINAcon 2021 - Lars Schöbitz - Slides: lse.de"
 date: "2021-10-29"
 output:
   xaringan::moon_reader:
@@ -19,13 +19,15 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 options(
   htmltools.dir.version = FALSE,   
   htmltools.preserve.raw = FALSE # to fix HTML issue
-  )
+)
 # figure height, width, dpi
 knitr::opts_chunk$set(echo = FALSE, 
                       warning = FALSE, 
@@ -39,26 +41,36 @@ knitr::opts_chunk$set(echo = FALSE,
                       dpi = 300,
                       message = FALSE)
 
-# ggplot2 set theme
-ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+# taken from: https://www.garrickadenbuie.com/blog/decouple-code-and-output-in-xaringan-slides/
+knitr::opts_hooks$set(fig.callout = function(options) {
+  if (options$fig.callout) {
+    options$echo <- FALSE
+    options$out.height <- "99%"
+    options$fig.width <- 16
+    options$fig.height <- 8
+  }
+  options
+})
+
+# load packages -----------------------------------------------------------
 
 library(tidyverse)
+library(numform)
+library(htmltools)
+
+# set options -------------------------------------------------------------
+
 library(xaringanExtra)
+library(xaringanthemer)
+
 xaringanExtra::use_panelset()
 xaringanExtra::use_share_again()
 xaringanExtra::style_share_again(
   share_buttons = c("twitter", "linkedin", "pocket")
 )
 
-# load packages -----------------------------------------------------------
-
-library(xaringanthemer)
-library(palmerpenguins)
-
-# set options -------------------------------------------------------------
-
 style_mono_accent(
-  base_color = "#0F4C81", # Pantone Classic Blue
+  base_color = "#40004b", 
   header_font_google = google_font("Montserrat"),
   code_font_google = google_font("Fira Mono"), 
   code_highlight_color = "#D3D3D3", code_inline_background_color = "#D3D3D3", 
@@ -73,11 +85,33 @@ style_mono_accent(
   outfile = here::here("slides/assets/css/xaringan-themer.css")
 )
 
-# htmttools
 
-library(htmltools)
+# ggplot2 set theme
+# ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+
 
 ```
+
+```{r read-data, echo=FALSE}
+
+# Definiere faktoren level
+
+erfahrung_level <- c("Ich habe keine.", 
+                     "Ich habe hin und wieder ein paar Zeilen geschrieben.",
+                     "Ich habe schon grössere Software geschrieben und gewartet.",
+                     "Ich habe Software für meinen eigenen Gebrauch geschrieben.")
+
+
+dat_erfahrung <- read_csv(here::here("slides/data/teilnehmer_innen-erfahrung-derived.csv")) %>% 
+  mutate(antwort = fct_relevel(antwort, erfahrung_level)) 
+
+dat_gh_usage <- read_csv(here::here("slides/data/gh-usage-data-derived.csv"))
+
+dat_rscloud_usage <- read_csv(here::here("slides/data/rscloud-usage-data-derived.csv"))
+
+```
+
+
 
 ```{r broadcast, echo=FALSE}
 xaringanExtra::use_broadcast()
@@ -106,27 +140,33 @@ layout: true
 ---
 class: middle, inverse
 
-# .large[Warum?]
+# .large[Warum wird's gemacht?]
 
 ---
-## Warum? (Bisher nur Outline)
+## Warum wird's gemacht?
 
-**STAT**
+**Statistisches Amt**
 
-- Kompetenzen im Umgang mit R und git/GitHub ausbauen um Kollaboration effizienter zu machen
-- Analytische Kompetenzen ausbauen um bessere datenbasierte Entscheidungen zu treffen 
-- Verständnis von strukturierten öffentlichen Daten (OGD) erhöhen um Anzahl der Publikationen voranzutreiben 
+
+- Effiziente Kollaboration durch Kompetenzaufbau
+- Transparente datenbasierte Entscheidungen in der Verwaltung
+- Erhöhtes Verständnis für strukturierte, öffentliche Behördendaten (OGD) 
+
+
+--
+
 
 **Kursteilnehmer_innen**
 
-- Weg von Excel, SPSS und STAT -> Hin zu modernen Open Source Alternativen
-- Datenvisualisierungen
-- Effizienteres Arbeiten und Zugang zum Programmieren bekommen
-    
+- Weg von Excel, SPSS und STATA -> Hin zu modernen Open Source Alternativen
+- Datenvisualisierungen !!!
+- Zugang zum Programmieren bekommen
+- Repititive Arbeiten effizienter lösen
+
 ---
 class: middle, inverse
 
-# .large[Was?]
+# .large[Was wird abgedeckt?]
 
 ---
 class: left
@@ -140,32 +180,18 @@ background-size: contain
 
 ???
 
-- Ein neuartiger Kurs, welcher es sich zum Ziel setzt Analytiker in der Verwaltung mit modernen Werkzeugen für die Arbeit mit Daten auszustatten
-
-- Der Kurs wurde für Beginner konzipiert und Bedarf keinerlei Vorkenntnisse
-
-- Ein Fokus wird auf Kollaboratives Arbeiten und das Kommunizieren von Datenprojekten gelegt, wesshalb wir von Beginn an Git und GitHub nutzen und im R Markdown Format schreiben
-
-
----
-# Was? - Lernziele
-
-Am Ende des Kurses können Teilnehmer_innen
-
-1. (Daten)projekte reproduzierbar publizieren
-2. Kollaborativ mit Git und GitHub arbeiten
-3. Das Konzept von Tidy Data verstehen und anwenden
-4. Explorative Datenanalysen durchführen
-5. Sich selbst und Anderen helfen mehr über die grosse Welt der Möglichkeiten für Data Science mit R zu lernen
-
+- Für Beginner ohne Vorkentnisse
+- Das Arbeiten mir R, RStudio und GitHub
+- Fokus auf deskriptive Statistik (kein machine learning, keine Regressionsanalysen) 
+- Explorative Datenanalyse mit viel Datenvisualiserungen
 
 ---
 class: middle, inverse
 
-# .large[Wie?]
+# .large[Wie wird's gemacht?]
 
 ---
-## Wie? - Werkzeugkiste
+## Wie wird's gemacht? 
 
 .pull-left[
 
@@ -195,109 +221,301 @@ class: middle, inverse
 ]
 
 ---
-## Wie? - Kursüberblick (vielleicht weglassen)
+## Wie wird's gemacht? 
 
-Sieben Kurseinheiten über sieben Wochen
+.pull-left[
 
-- **Unterricht:** Wöchentlich 3 Stunden
-- **Übungen:** Übungen während der Kurseinheit 
-- **Hausaufgaben:** Einzureichen bis zum nächsten Kurstag 
-- **Persönliches Tutoring:** Sprechstunden ausserhalb der Kurstage
-- **Abschluss Projekt (freiwillig):** 
-    - Eigene Arbeitsatmosphäre aufbauen
-    - Arbeit mit eigenen Daten 
-    - Bericht erfassen
-    - 5 Minuten Präsentation
-- **Zertifikat:** Bestätigung über Teilnahme
+- **Unterricht:** 
+    - 7 Wochen á 3 Stunden
+- **Lehrmethoden:** 
+    - Live Coding 
+    - Pair Programming 
+- **Hausaufgaben:** 
+    - Material zum Üben und Vertiefen
+
+]
+
+
+--
+
+
+
+.pull-right[
+
+- **Persönliches Tutoring:** 
+    - Verfügbar auf Slack/Zoom
+- **Abschluss Projekt:** 
+    - Arbeitsumgebung aufbauen
+    - Mit eigenen Daten arbeiten
+    - Das Gelernte anwenden
+    - Gezielte Unterstützung bekommen
+- **Zertifikat:** 
+    - Bestätigung über Teilnahme
+]
+
+---
+class: middle, inverse
+
+# .large[Wer ist dabei?]
+
+---
+
+```{r plot-erfahrung-allg, eval=FALSE}
+dat_erfahrung %>% 
+  filter(erfahrung == "erfahrung_allgemein") %>% 
+  group_by(erfahrung) %>% 
+  count(antwort) %>% 
+  
+  # plot
+  ggplot(aes(x = antwort, 
+             y = n)) +
+  geom_col(fill = "#40004b", width = 0.8) +
+  labs(title= "Anzahl Teilnehmer_innen mit Erfahrung im...",
+       subtitle = "...Programmieren im Allgemeinen",
+       y = NULL,
+       x = NULL) +
+  theme_minimal() +
+  scale_x_discrete(labels = function(x) f_wrap(f_replace(x))) + #, expand = c(0.2, 0.2)) +
+  # https://stackoverflow.com/a/22945857/6816220
+  scale_y_continuous(limits = c(0, 26), expand = c(0, 0)) +
+  theme_light(base_size = 28) +
+  theme(
+    legend.position = "none",
+    panel.grid = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(size = 28)
+  )
+```
+
+```{r plot-erfahrung-allg-output, ref.label="plot-erfahrung-allg", fig.callout=TRUE, out.width="100%"}
+```
+
+
+
+---
+
+```{r plot-erfahrung-r, eval=FALSE}
+
+dat_erfahrung %>% 
+  filter(erfahrung == "erfahrung_r") %>% 
+  group_by(erfahrung) %>% 
+  count(antwort) %>% 
+  
+  ggplot(aes(x = antwort, 
+             y = n)) +
+  geom_col(fill = "#40004b", width = 0.8) +
+  labs(title= "Anzahl Teilnehmer_innen mit Erfahrung im...",
+       subtitle = "...Programmieren mit R",
+       x = NULL,
+       y = NULL) +
+  # wrap labels: https://github.com/trinker/numform/blob/master/README.Rmd#L431
+  scale_x_discrete(labels = function(x) f_wrap(f_replace(x)),
+                   # show all factor levels https://stackoverflow.com/a/10835659/6816220
+                   drop = FALSE) +
+  scale_y_continuous(limits = c(0, 26), expand = c(0, 0)) +
+  theme_light(base_size = 28) +
+  theme(
+    axis.text.x = element_text(size = 28),
+    legend.position = "none",
+    panel.grid = element_blank(),
+    axis.ticks.x = element_blank()
+  )
+
+```
+
+```{r plot-erfahrung-r-output, ref.label="plot-erfahrung-r", fig.callout=TRUE}
+```
 
 
 ---
 class: middle, inverse
 
-# .large[Wer?]
+# .large[Wieviel wurde programmiert?]
+
 
 ---
 
-```{r}
+```{r plot-wieviel-rscloud-1, eval=FALSE}
 
-knitr::include_graphics("img/shot1.png")
+#dat_usage %>% 
+#  mutate(stunden_pro_woche = stunden / 7) %>%
+#  summary()
+
+
+highlight_df <- tibble(kurs = c("K2", "K3"), 
+                       stunden_pro_woche = c(19.735, 2.745))
+
+
+dat_rscloud_usage %>% 
+  mutate(stunden_pro_woche = stunden / 7) %>% 
+  
+  # plot
+  
+  ggplot(aes(x = kurs, y = stunden_pro_woche, fill = kurs)) +
+  geom_boxplot(outlier.shape = NA, coef = 0, width = 0.5, alpha = 1, color = "white") +
+  geom_point(size = 10, alpha = 0.2) +
+  #geom_point(data = highlight_df,
+  #           mapping = aes(x = kurs, y = stunden_pro_woche), 
+  #           size = 10, color = "#1f78b4") +
+  geom_hline(yintercept = 8.5, alpha = 0.5, linetype = 3) +
+  
+  labs(x = "Kurs",
+       title = "Arbeitsstunden in der RStudio Cloud",  
+       subtitle = "Im Durchschnitt arbeitet jede_r Teilnehmer_in 8.5 Stunden/Woche mit R",
+       x = NULL,
+       y = NULL) +
+  
+  #annotate("text", x = 2.5, y = 19.735, size = 10, color = "#1f78b4",
+  #         label = "Sehr engagiert") +
+  #annotate("text", x = 2.4, y = 2.745, size = 10, color = "#1f78b4",
+  #         label = "Im Unterricht dabei") +
+  scale_y_continuous(breaks = seq(0, 20, 5), limits = c(0, 20)) +
+  scale_fill_brewer(type = "qual", palette = "PRGn") +
+  theme_light(base_size = 32) +
+  theme(
+    legend.position = "none",
+    panel.grid = element_blank(),
+    axis.ticks.x = element_blank()
+  )
 
 ```
 
----
+```{r plot-wieviel-rscloud-2, eval=FALSE}
 
-```{r}
+#dat_usage %>% 
+#  mutate(stunden_pro_woche = stunden / 7) %>%
+#  summary()
 
-knitr::include_graphics("img/shot2.png")
+
+highlight_df <- tibble(kurs = c("K2", "K3"), 
+                       stunden_pro_woche = c(19.735, 2.745))
+
+
+dat_rscloud_usage %>% 
+  mutate(stunden_pro_woche = stunden / 7) %>% 
+  
+  # plot
+  
+  ggplot(aes(x = kurs, y = stunden_pro_woche, fill = kurs)) +
+  geom_boxplot(outlier.shape = NA, coef = 0, width = 0.5, alpha = 1, color = "white") +
+  geom_point(size = 10, alpha = 0.2) +
+  geom_point(data = highlight_df,
+             mapping = aes(x = kurs, y = stunden_pro_woche), 
+             size = 10, color = "#1f78b4") +
+  geom_hline(yintercept = 8.5, alpha = 0.5, linetype = 3) +
+  
+  labs(x = "Kurs",
+       title = "Arbeitsstunden in der RStudio Cloud",  
+       subtitle = "Im Durchschnitt arbeitet jede_r Teilnehmer_in 8.5 Stunden/Woche mit R",
+       x = NULL,
+       y = NULL) +
+  
+  annotate("text", x = 2.5, y = 19.735, size = 10, color = "#1f78b4",
+           label = "Sehr engagiert") +
+  annotate("text", x = 2.4, y = 2.745, size = 10, color = "#1f78b4",
+           label = "Im Unterricht dabei") +
+  scale_y_continuous(breaks = seq(0, 20, 5), limits = c(0, 20)) +
+  scale_fill_brewer(type = "qual", palette = "PRGn") +
+  theme_light(base_size = 32) +
+  theme(
+    legend.position = "none",
+    panel.grid = element_blank(),
+    axis.ticks.x = element_blank()
+  )
 
 ```
 
+```{r plot-wieviel-rscloud-output-1, ref.label="plot-wieviel-rscloud-1", fig.callout=TRUE}
+```
+
+
 ---
 
-```{r}
+```{r plot-wieviel-rscloud-output-2, ref.label="plot-wieviel-rscloud-2", fig.callout=TRUE}
+```
 
-knitr::include_graphics("img/shot3.png")
+
+---
+
+```{r plot-wieviel-gh, eval=FALSE}
+
+highlight_df2 <- tibble(kurs = c("K1", "K2", "K3", "K4"), 
+                        stunden_pro_woche = c(13, 13, 12, 11))
+
+dat_gh_usage %>% 
+  ggplot(aes(x = kurs, y = commits, fill = kurs)) +
+  geom_boxplot(outlier.shape = NA, coef = 0, width = 0.5, alpha = 1, color = "white") +
+  geom_jitter(size = 10, alpha = 0.2, width = 0.1) +
+  geom_hline(yintercept = 3, alpha = 0.5, linetype = 3) +
+  labs(x = "Kurs",
+       title = "Anzahl Commits auf GitHub Repos (Übungen)",  
+       subtitle = "In 508 Repos wurden im Schnitt 3 Commits pro Repo gemacht",
+       x = NULL,
+       y = NULL) +
+  
+  #annotate("text", x = 2.5, y = 15, size = 10,
+  #         label = "Erste Hausaufgabe") +
+  scale_y_continuous(breaks = seq(0, 20, 5), limits = c(0, 15)) +
+  scale_fill_brewer(type = "qual", palette = "PRGn") +
+  theme_light(base_size = 28) +
+  theme(
+    legend.position = "none",
+    panel.grid = element_blank(),
+    axis.ticks.x = element_blank()
+  )
 
 ```
 
----
-# Text Analyse auf Frage:
-
-"Was möchtest du nach diesem Kurs wissen oder machen können, dass du momentan nicht weisst oder nicht machen kannst?"
-
-- Was sind die Top 5 Begriffe die gennant werden?
-- Welche zwei Worte werden am häufigsten zusammen gennannt?
-
+```{r plot-wieviel-gh-output, ref.label="plot-wieviel-gh", fig.callout=TRUE}
+```
 
 ---
 class: middle, inverse
 
-# .large[Wieviel?]
+# .large[Was braucht's noch?]
 
 ---
-## Wieviel wurde programmiert?
+class: left
+background-image: url(img/luba-ertel-sd89rVl9WCo-unsplash.jpg)
+background-position: right
+background-size: contain
 
-Ich habe Nutzungsdaten aus der RStudio Cloud, aber momentan nur als Dashboard. Versuche an die Rohdaten zu kommen und folgende Indikatoren zu zeigen:
+## Was braucht's noch?
 
-- Anzahl Stunden pro Teilnehmer_in und (mean, sd) welche zusätzlich zu den 3 Kurstunden pro Woche aufgewendet wurden 
-- Zeitreihe der Summe Stunden pro Woche über alle Kurse
+- Praxisnahe Case Studies
+- Nachschlagewerk für Funktionen und Konzepte
+- Vertiefung im Arbeiten mit git und GitHub 
+- Community Einbindung der Teilnehmer_innen
 
-Falls ich nicht an Daten komme, dann berechne ich ein paar Kennzahlen selbst. 
-
----
-class: middle, inverse
-
-# .large[Evaluation / Zufriedenheit]
+.footnote[Photo by: [Lube Ertel](https://unsplash.com/photos/sd89rVl9WCo)]
 
 
----
-## Evaluation - wöchentlich
 
-- Zeige Ergebnis einer Frage zum Inhalt der Kurseinheit
-- **Plot wird mit R reproduziert**
+???
 
-```{r}
+- Evaluation am Ende jeder Kurseinheit für Feedback
+- Fragebogen vom Statistischen Amt wenn Zertifikate verschickt werden
 
-knitr::include_graphics("img/shot4.png")
 
-```
 
 ---
 # `r emo::ji("sunflower")` Danke 
 
 Für die Aufmerksamkeit!
 
-Für die R packages [{xaringan}](https://github.com/yihui/xaringan) und [{xaringanthemer}](https://github.com/gadenbuie/xaringanthemer) 
+Für die R packages [{xaringan}](https://github.com/yihui/xaringan) und [{xaringanthemer}](https://github.com/gadenbuie/xaringanthemer)
 
-**Folien als PDF**:
+Folien als PDF:
 
-**Folien als HTML**:
+Folien als HTML:
 
-**Kurswebseite**: https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
+Code und Daten für Folien auf GitHub: 
 
-**Email**: Lars@Lse.de
+Kurswebsite: https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
 
-**Twitter**: @larnsce
+Email: [Lars@Lse.de](mailto:lars@lse.de)
+
+Twitter: [@larnsce](https://twitter.com/larnsce)
 
 
 

@@ -1,8 +1,8 @@
 ---
 title: "Die datengetriebene Verwaltung: Daten- und Statistikkompetenz für den Kanton Zürich"
 subtitle: "rstatsZH - Data Science mit R"
-author: "DINAcon 2021 - Lars Schöbitz - Slides: lse.de"
-date: "2021-10-29"
+author: "Lars Schöbitz | DINAcon 2021 | 2021-10-29"
+date: "lse.de/slides/dinacon2021"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/css/my-css-style.css", "assets/css/xaringan-themer.css"]
@@ -120,6 +120,7 @@ xaringanExtra::use_broadcast()
 
 class: title-slide
 
+<script async defer data-domain="lse.de" src="https://plausible.io/js/plausible.js"></script>
 
 # `r rmarkdown::metadata$title`
 
@@ -136,6 +137,17 @@ p(rmarkdown::metadata$date)
 
 ---
 layout: true
+
+---
+class: middle
+background-image: url(img/lars_schoebitz_profile_photo.jpg)
+background-position: right
+background-size: contain
+
+# .big[Hoi! `r emo::ji("wave")`]
+
+Ich bin Lars   
+[@larnsce](https://twitter.com/larnsce)
 
 ---
 class: middle, inverse
@@ -457,7 +469,7 @@ dat_gh_usage %>%
   #         label = "Erste Hausaufgabe") +
   scale_y_continuous(breaks = seq(0, 20, 5), limits = c(0, 15)) +
   scale_fill_brewer(type = "qual", palette = "PRGn") +
-  theme_light(base_size = 28) +
+  theme_light(base_size = 32) +
   theme(
     legend.position = "none",
     panel.grid = element_blank(),
@@ -505,19 +517,17 @@ Für die Aufmerksamkeit!
 
 Für die R packages [{xaringan}](https://github.com/yihui/xaringan) und [{xaringanthemer}](https://github.com/gadenbuie/xaringanthemer)
 
-Folien als PDF:
+**Folien:** [lse.de/slides/dinacon2021](https://lse.de/slides/dinacon2021/#1) ([Download Folien als PDF Download](https://github.com/larnsce/DINAcon2021/blob/main/slides/03_DINAcon2021_rstatsZH_Lars_Schoebitz.pdf))
 
-Folien als HTML:
+**Code und Daten für Folien auf GitHub:** https://github.com/larnsce/DINAcon2021
 
-Code und Daten für Folien auf GitHub: 
+**Kurswebsite:** https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
 
-Kurswebsite: https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
+**Email:** [Lars@Lse.de](mailto:lars@lse.de)
 
-Email: [Lars@Lse.de](mailto:lars@lse.de)
+**Twitter:** [@larnsce](https://twitter.com/larnsce)
 
-Twitter: [@larnsce](https://twitter.com/larnsce)
-
-
+**License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 
 

@@ -510,6 +510,32 @@ ggsave(here::here("slides/figures/plot-github-nutzung.png"), width = 16, height 
 ---
 class: middle, inverse
 
+# .large[Wo ist das Kursmaterial?]
+
+
+---
+class: left
+background-image: url(img/jaredd-craig-HH4WBGNyltc-unsplash.jpg)
+background-position: right
+background-size: contain
+
+## Wo ist das Kursmaterial?
+
+- [github.com/rstatszh](https://github.com/rstatszh)
+- [rstatszh.github.io/website](https://rstatszh.github.io/website/)
+- CC BY 4.0 und MIT License 
+- `#OpenEducation`
+
+
+
+
+.footnote[Photo by: [Jaredd Craig](https://unsplash.com/photos/HH4WBGNyltc)]
+
+
+
+---
+class: middle, inverse
+
 # .large[Was braucht's noch?]
 
 ---
@@ -547,13 +573,11 @@ Für die R packages [{xaringan}](https://github.com/yihui/xaringan) und [{xaring
 
 **Code und Daten für Folien auf GitHub:** https://github.com/larnsce/DINAcon2021
 
-**Kurswebsite:** https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
+**Info und Anmeldung:**   https://rstatszh.github.io/website/posts/2021-02-17-ueberblick/
 
 **Email:** [Lars@Lse.de](mailto:lars@lse.de)
 
 **Twitter:** [@larnsce](https://twitter.com/larnsce)
-
-**License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 
 

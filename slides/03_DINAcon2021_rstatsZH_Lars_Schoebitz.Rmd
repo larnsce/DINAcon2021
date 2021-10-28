@@ -441,6 +441,7 @@ dat_rscloud_usage %>%
        subtitle = "Im Durchschnitt arbeitet jede_r Teilnehmer_in 8.5 Stunden/Woche mit R",
        x = NULL,
        y = NULL) +
+       #caption = "Folien: https://lse.de/slides/dinacon2021") +
   
   annotate("text", x = 2.5, y = 19.735, size = 10, color = "#1f78b4",
            label = "Sehr engagiert") +
